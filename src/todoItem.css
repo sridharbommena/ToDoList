@@ -1,0 +1,23 @@
+#checkbox{
+    transform: scale(1.5);
+}
+
+#todoItem {
+    font-size: 28px ;
+    padding: 0px 10px;
+}
+
+#todoItemStriked {
+    font-size: 28px ;
+    padding: 0px 10px;
+    text-decoration: line-through;
+}
+
+#container
+{
+    display: flex ;
+    align-items: center;
+    border-bottom: 0.01px solid grey ;
+    display: flex ;
+    justify-content: space-between;
+}
