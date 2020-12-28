@@ -1,6 +1,8 @@
 import React from 'react'
 import {v4} from "uuid" ;
 import "./formGroup.css";
+import toaster from "toasted-notes";
+import "toasted-notes/src/styles.css";
 
 
 function FormGroup({setTodo}) {
@@ -11,7 +13,8 @@ function FormGroup({setTodo}) {
     {
         const task = todoRef.current.value.trim();
         if(task !== "")
-        setTodo( prev =>
+        {
+            setTodo( prev =>
             [
                 {
                 _id : v4(),
@@ -22,6 +25,12 @@ function FormGroup({setTodo}) {
                 
             ]);
 
+            toaster.notify(" Todo added" , {
+                duration : 1200 ,
+                position: "top-right",
+            });
+
+        }
         else
         {
             alert("Enter A ToDo");

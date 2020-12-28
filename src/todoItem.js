@@ -1,6 +1,7 @@
 import React from 'react'
 import "./todoItem.css";
 import { AiOutlineDelete } from "react-icons/ai";
+import toaster from 'toasted-notes';
 
 function TodoItem({todoItem , list , id , setTodo }) {
     const handleClick = ()=>
@@ -33,6 +34,11 @@ function TodoItem({todoItem , list , id , setTodo }) {
         list = list.filter(item => item._id !== id);
 
         setTodo(list);
+
+        toaster.notify(" Todo Deleted !" , {
+            duration : 1200 ,
+            position: "top-right",
+        });
     }
     return (
         <div id="container">
